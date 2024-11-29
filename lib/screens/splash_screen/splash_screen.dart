@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
 import 'package:visitcenter/constant/app_colors.dart';
+import 'package:visitcenter/screens/login_page/login_page.dart';
 import 'package:visitcenter/screens/main_screen/main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,12 +14,10 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<dynamic> gotoHomePage() async {
-    await Future.delayed(Duration(seconds: 5));
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MainScreen(),
-        ));
+    await Future.delayed(Duration(seconds: 5)).then((value) {
+      Get.to(MainScreen(),transition: Transition.fade,duration: Duration(seconds: 4));
+    },);
+
   }
 
   @override
